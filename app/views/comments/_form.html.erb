@@ -1,0 +1,18 @@
+<% if @comment %>
+  <%= render "common/errors", model: @comment %>
+<% end %>
+
+<%= form_for [@article, @comment || Comment.new(article_id: @article.id)] do |f| %>
+  <p>
+    <%= f.label :commenter %>
+    <%= f.text_field :commenter %>
+  </p>
+
+  <p>
+    <%= f.label :body %>
+    <%= f.text_field :body %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+    <% end %>
